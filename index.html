@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocab Builder</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+
+<nav class="bg-white shadow-sm px-4 md:px-8 py-4">
+
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+
+        <div class="w-20 m-auto sm:m-0">
+            <img src="images/Vocab Builder Lightbulb Logo.png" alt="logo">
+        </div>
+        <div class="hidden md:flex items-center gap-6">
+
+            <a href="#"  class="text-gray-600 hover:text-blue-600">
+                Home
+            </a>
+
+            <a class="text-gray-600 hover:text-blue-600">
+                Search
+            </a>
+
+            <a href="#" class="text-gray-600 hover:text-blue-600">
+                My Words
+            </a>
+
+            <a href="#" class="text-gray-600 hover:text-blue-600">
+                Quiz
+            </a>
+
+        </div>
+
+        <!--  Menu Bar -->
+        <button class="md:hidden text-2xl">
+            ☰
+        </button>
+
+    </div>
+
+</nav>
+
+<!-- Search Section Start -->
+
+<section class="max-w-3xl mx-auto px-4 py-12 md:py-16 text-center">
+
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-800">
+        Build Your Vocabulary
+    </h2>
+
+    <!-- Subtitle -->
+    <p class="text-slate-500 mt-3 text-sm md:text-base">
+        Discover meanings, pronunciation and examples of English words.
+    </p>
+
+    <!-- Search Box -->
+    <div class="flex flex-col sm:flex-row gap-3 mt-8">
+
+        <input
+            type="text"
+            id="wordInput"
+            placeholder="Enter an English word..."
+            class="w-full border border-slate-300 rounded-lg px-4 py-3 outline-none focus:border-blue-500"
+        >
+
+        <button
+            id="searchBtn"
+            class="bg-blue-600 text-white px-7 py-3 rounded-lg hover:bg-blue-700"
+        >
+            Search
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- Word Result Section -->
+
+<section
+    id="resultSection"
+    class="max-w-3xl mx-auto px-4 pb-12"
+>
+
+    <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-5 md:p-8">
+
+        <!-- Word and Audio -->
+        <div class="flex items-center justify-between gap-4">
+
+            <div>
+                <h2
+                    id="wordTitle"
+                    class="text-3xl font-bold text-slate-800"
+                >
+                    Beautiful
+                </h2>
+
+                <p id="phonetic" class="text-slate-500 mt-2">
+                    /ˈbjuːtɪfəl/
+                </p>
+            </div>
+
+            <button
+                id="audioBtn"
+                class="bg-blue-100 text-blue-600 p-3 rounded-full"
+                aria-label="Play pronunciation"
+            >
+                🔊
+            </button>
+
+        </div>
+
+        <!-- Meaning -->
+        <div class="mt-7">
+
+            <h3 class="font-semibold text-slate-800">
+                Meaning
+            </h3>
+
+            <p id="meaning" class="text-slate-600 mt-2">
+                Pleasing to the senses or mind.
+            </p>
+
+        </div>
+
+        <!-- Part of Speech -->
+        <div class="mt-5">
+
+            <h3 class="font-semibold text-slate-800">
+                Part of Speech
+            </h3>
+
+            <p id="partOfSpeech" class="text-blue-600 mt-2">
+                Adjective
+            </p>
+
+        </div>
+
+        <!-- Example -->
+        <div class="mt-5">
+
+            <h3 class="font-semibold text-slate-800">
+                Example
+            </h3>
+
+            <p id="example" class="text-slate-600 mt-2">
+                She has a beautiful garden.
+            </p>
+
+        </div>
+
+        <!-- Save Button -->
+        <button
+            id="saveBtn"
+            class="w-full mt-8 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700"
+        >
+            + Save Word
+        </button>
+
+    </div>
+
+</section>
+
+<!-- My Words Section -->
+<section
+    id="myWordsSection"
+    class="max-w-5xl mx-auto px-4 py-10 "
+>
+
+    <h2 class="text-2xl font-bold text-slate-800 mb-6">
+        My Saved Words
+    </h2>
+
+    <!-- Search Saved Words -->
+    <input
+        type="text"
+        id="savedSearch"
+        placeholder="Search saved words..."
+        class="w-full border border-slate-300 rounded-lg p-3 mb-6 outline-none focus:border-blue-500"
+    >
+
+    <!-- Saved Words List -->
+    <div
+        id="savedWordsList"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+    >
+
+    </div>
+
+</section>
+<!-- Quiz Section -->
+<section
+    id="quizSection"
+    class="max-w-3xl mx-auto px-4 py-10 "
+>
+
+    <div class="bg-white p-5 md:p-8 rounded-2xl shadow-md border">
+
+        <!-- Heading -->
+        <h2 class="text-2xl font-bold text-slate-800">
+            Vocabulary Quiz
+        </h2>
+
+        <p class="text-slate-500 mt-2">
+            Test your vocabulary knowledge.
+        </p>
+
+        <!-- Question -->
+        <div class="mt-8">
+
+            <p class="text-sm text-blue-600 font-semibold">
+                Question
+            </p>
+
+            <h3
+                id="quizQuestion"
+                class="text-xl font-bold text-slate-800 mt-2"
+            >
+                What is the meaning of Beautiful?
+            </h3>
+
+        </div>
+
+        <!-- Reveal Answer Button -->
+        <button
+            id="revealBtn"
+            class="bg-blue-600 text-white px-6 py-3 rounded-lg mt-6 hover:bg-blue-700"
+        >
+            Reveal Answer
+        </button>
+
+        <!-- Answer -->
+        <div
+            id="quizAnswer"
+            class="hidden bg-green-50 text-green-700 p-4 rounded-lg mt-5"
+        >
+            Pleasing to the senses.
+        </div>
+
+        <!-- Quiz Actions -->
+        <div class="flex flex-col sm:flex-row gap-3 mt-6">
+
+            <button
+                id="knownBtn"
+                class="bg-green-600 text-white px-5 py-3 rounded-lg"
+            >
+                I Knew It
+            </button>
+
+            <button
+                id="unknownBtn"
+                class="bg-red-500 text-white px-5 py-3 rounded-lg"
+            >
+                I Didn't Know
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-900 text-white mt-16">
+
+    <div class="max-w-6xl mx-auto px-4 py-8">
+
+        <div class="">
+
+            <div class="w-20 m-auto">
+            <img src="images/Vocab Builder Lightbulb Logo.png" alt="logo">
+            </div>
+
+            <p class="text-slate-400 mt-3 text-sm text-center">
+                Learn new words every day and improve your English.
+            </p>
+
+        </div>
+
+        <hr class="border-slate-700 my-6">
+
+        <p class="text-center text-slate-400 text-sm">
+            © 2026 VocabBuilder. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+    
+</body>
+</html>
